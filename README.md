@@ -25,7 +25,7 @@ Write any JSON object. The service stamps `id` (UUID v4) and `createdAt` (ISO 86
 ```bash
 curl -s -X POST http://localhost:3000/events \
   -H "Content-Type: application/json" \
-  -d '{"type":"order","userId":"u42","amount":149.99}' | jq
+  -d '{"type":"order","userId":"u42","amount":149.99}'
 ```
 
 Response (201):
@@ -43,7 +43,7 @@ Response (201):
 Fetch a single event by ID using a direct byte-range seek — no file scan.
 
 ```bash
-curl -s http://localhost:3000/events/a1b2c3d4-... | jq
+curl -s http://localhost:3000/events/a1b2c3d4-...
 ```
 
 Returns 404 if the ID is not in the index:
@@ -55,7 +55,7 @@ Returns 404 if the ID is not in the index:
 Total events written and bytes on disk.
 
 ```bash
-curl -s http://localhost:3000/stats | jq
+curl -s http://localhost:3000/stats
 ```
 
 Response:
@@ -147,4 +147,4 @@ Specifically:
 
 ## Demo Video
 
-> [Link to be added after recording]
+[EventStore demo (Google Drive)](https://drive.google.com/file/d/1pIeMrPkOW0j0W3xuIS1MhjCcuflnC7wx/view?usp=sharing)
